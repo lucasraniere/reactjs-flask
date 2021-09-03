@@ -6,9 +6,6 @@ app = Flask(__name__)
 def hello_world():
     request_method = request.method
     if request.method == 'POST':
-        #print('-----------------------------')
-        #print(request.form)
-        #print('-----------------------------')
         first_name = request.form['first_name']
         return redirect(url_for('name', first_name=first_name))
     return render_template('hello2.html', request_method=request_method)
